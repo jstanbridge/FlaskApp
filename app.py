@@ -1,11 +1,15 @@
-from flask import Flask, render_template, redirect, url_for, request, session, flash, g
+from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
-import sqlite3
+#import sqlite3
 
 app = Flask(__name__)
 
 app.secret_key = "example key"
-app.database = "sample.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+
+db = SQLAlchemy(app)
+from models import *
 
 
 def login_required(f):
@@ -22,17 +26,8 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-		posts = []
-		try:
-			g.db = connect_db()
-			cur = g.db.execute('select * from posts')
 
-			for row in cur.fetchall():
-				posts.append(dict(title=row[0], description=row[1]))
-
-			g.db.close()
-		except sqlite3.OperationalError:
-			flash("No database exists.")
+		posts = db.session.query(BlogPost).all()
 		return render_template('index.html', posts=posts)
 
 
@@ -62,8 +57,8 @@ def logout():
 		return redirect(url_for('welcome'))
 
 
-def connect_db():
-	return sqlite3.connect(app.database)
+#def connect_db():
+#	return sqlite3.connect(app.database)
 
 
 if __name__ == '__main__':
