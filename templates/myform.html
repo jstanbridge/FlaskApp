@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlaskApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+    <div class="container">
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="title">Game Title</label>
+  <div class="controls">
+    <input id="title" name="title" type="text" placeholder="Small World" class="input-xlarge" required="">
+    <p class="help-block">Enter the name of the game here.</p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="publisher">Publisher</label>
+  <div class="controls">
+    <input id="publisher" name="publisher" type="text" placeholder="Azmodee" class="input-xlarge">
+    <p class="help-block">Enter the name of the publisher here.</p>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="control-group">
+  <label class="control-label" for="players"># of Players</label>
+  <div class="controls">
+    <label class="radio inline" for="players-0">
+      <input type="radio" name="players" id="players-0" value="1" checked="checked">
+      1
+    </label>
+    <label class="radio inline" for="players-1">
+      <input type="radio" name="players" id="players-1" value="2">
+      2
+    </label>
+    <label class="radio inline" for="players-2">
+      <input type="radio" name="players" id="players-2" value="1-3">
+      1-3
+    </label>
+    <label class="radio inline" for="players-3">
+      <input type="radio" name="players" id="players-3" value="1-5">
+      1-5
+    </label>
+    <label class="radio inline" for="players-4">
+      <input type="radio" name="players" id="players-4" value="6+">
+      6+
+    </label>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label" for="playtime">Time per Player</label>
+  <div class="controls">
+    <select id="playtime" name="playtime" class="input-xlarge">
+      <option>5 min</option>
+      <option>10 min</option>
+      <option>15 min</option>
+      <option>20 min</option>
+      <option>25 min</option>
+      <option>30 min</option>
+      <option>45 min</option>
+      <option>1 hr</option>
+      <option>1.5 hr+</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label" for="age">Age Range</label>
+  <div class="controls">
+    <select id="age" name="age" class="input-xlarge">
+      <option>7 &amp; Under</option>
+      <option>7-12</option>
+      <option>12-17</option>
+      <option>18+</option>
+      <option>All Ages</option>
+    </select>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <label class="control-label" for="type">Game Type</label>
+  <div class="controls">
+    <label class="checkbox" for="type-0">
+      <input type="checkbox" name="type" id="type-0" value="Strategy">
+      Strategy
+    </label>
+    <label class="checkbox" for="type-1">
+      <input type="checkbox" name="type" id="type-1" value="Family">
+      Family
+    </label>
+    <label class="checkbox" for="type-2">
+      <input type="checkbox" name="type" id="type-2" value="Abstract">
+      Abstract
+    </label>
+    <label class="checkbox" for="type-3">
+      <input type="checkbox" name="type" id="type-3" value="Co-Op">
+      Co-Op
+    </label>
+    <label class="checkbox" for="type-4">
+      <input type="checkbox" name="type" id="type-4" value="Dexterity">
+      Dexterity
+    </label>
+    <label class="checkbox" for="type-5">
+      <input type="checkbox" name="type" id="type-5" value="Euro">
+      Euro
+    </label>
+    <label class="checkbox" for="type-6">
+      <input type="checkbox" name="type" id="type-6" value="Party">
+      Party
+    </label>
+    <label class="checkbox" for="type-7">
+      <input type="checkbox" name="type" id="type-7" value="Card">
+      Card
+    </label>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label" for="comments">Comments</label>
+  <div class="controls">                     
+    <textarea id="comments" name="comments">What did you think of this game?</textarea>
+  </div>
+</div>
+
+</fieldset>
+</form>
+    </div>
+
+  </body>
+</html>
